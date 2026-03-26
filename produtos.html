@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produtos</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="imagens/icone.ico" type="img/png">
+    <script src="script.js"></script>
+
+</head>
+
+<body>
+
+    <header>
+        <!--cabeçalho do site-->
+        <div class="cabeçalho">
+            <img src="imagens/logo_vitaltea.png" alt="logo vitaltea">
+            <h1>VitalTea</h1>
+        </div>
+        <!--area de navegacao entre as paginas-->
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="contato.html">Contatos</a></li>
+            </ul>
+        </nav>
+        <!--carrinho-->
+        <div class="carrinho-topo" onclick="abrirCarrinho()">
+
+            <span class="icone-carrinho">🛒</span>
+
+            <span class="contador-carrinho" id="contadorCarrinho">0</span>
+
+            <a href="carrinho.html" class="botao">Prossiga para o pagamento</a>
+
+        </div>
+    </header>
+
+        <main>
+            <!--Todos os produtos-->
+            <h2 class="titulo-principal">Produtos</h2>
+            <!--Canela-->
+            <div class="produtos">
+
+                <div class="produto" onclick="abrirProduto(this)"
+                data-nome="Chá de Canela"
+                data-descricao="Chá aromático com propriedades digestivas e termogênicas. Auxilia na digestão e traz sensação de conforto.">
+
+                    <img src="imagens/canela.jpg">
+                    <p>Canela</p>
+                    <p>200g</p>
+                    <p>R$7,00</p>
+
+                    <div class="botao-container">
+                        <button class="botao" 
+                        onclick="event.stopPropagation();
+                        adicionarAoCarrinho(this);
+                        window.location.href='carrinho.html';"
+                        data-nome='Canela'
+                        data-preco='7.00'
+                        data-quantidade='1'>
+                        🛒 Adicionar ao carrinho
+                        </button>
+                    </div>
+                </div>
+
+                <!--marcela-->
+                <div class="produto" onclick="abrirProduto(this)"
+                data-nome="Chá de Marcela"
+                data-descricao="Muito utilizado para problemas digestivos. Possui efeito calmante e ajuda no bem-estar do estômago.">
+
+                    <img src="imagens/marcela.jpeg">
+                    <p>Marcela</p>
+                    <p>200g</p>
+                    <p>R$8,00</p>
+
+                    <div class="botao-container">
+                        <button class="botao"
+                        onclick="event.stopPropagation();
+                        adicionarAoCarrinho(this);
+                        window.location.href='carrinho.html';"
+                        data-nome="Marcela"
+                        data-preco="8.00"
+                        data-quantidade="1">
+
+                        🛒 Adicionar ao carrinho
+                        </button>
+                    </div>
+                </div>
+
+                <!--camomila-->
+                <div class="produto" onclick="abrirProduto(this)"
+                data-nome="Chá de Camomila"
+                data-descricao="Conhecido por seu efeito relaxante. Ideal para reduzir ansiedade e melhorar o sono.">
+
+                    <img src="imagens/camomila_estacao_dos_graos.jpg">
+                    <p>Camomila</p>
+                    <p>200g</p>
+                    <p>R$12,00</p>
+
+                    <div class="botao-container">
+                        <button class="botao"
+                        onclick="event.stopPropagation();
+                        adicionarAoCarrinho(this);
+                        window.location.href='carrinho.html';"
+                        data-nome="Camomila"
+                        data-preco="12.00"
+                        data-quantidade="1">
+                        🛒 Adicionar ao carrinho
+                        </button>
+                    </div>
+                </div>
+
+                <!--capim limao-->
+                <div class="produto" onclick="abrirProduto(this)"
+                data-nome="Chá de Capim-limão"
+                data-descricao="Chá refrescante com propriedades calmantes. Auxilia na digestão e relaxamento.">
+
+                    <img src="imagens/capim-limao.jpeg">
+                    <p>Capim-limão</p>
+                    <p>200g</p>
+                    <p>R$10,00</p>
+
+                    <div class="botao-container">
+                        <button class="botao"
+                        onclick="event.stopPropagation();
+                        adicionarAoCarrinho(this);
+                        window.location.href='carrinho.html';"
+                        data-nome="Capim-limão"
+                        data-preco="10.00"
+                        data-quantidade="1">
+                        🛒 Adicionar ao carrinho
+                        </button>
+                    </div>
+                </div>
+
+                <!--cha preto-->
+                <div class="produto" onclick="abrirProduto(this)"
+                data-nome="Chá Preto"
+                data-descricao="Rico em antioxidantes e com leve cafeína. Ajuda na energia e concentração.">
+
+                    <img src="imagens/cha_preto.jpeg">
+                    <p>Chá preto</p>
+                    <p>200g</p>
+                    <p>R$8,00</p>
+
+                    <div class="botao-container">
+                        <button class="botao"
+                        onclick="event.stopPropagation();
+                        adicionarAoCarrinho(this);
+                        window.location.href='carrinho.html';"
+                        data-nome="Cha Preto"
+                        data-preco="8.00"
+                        data-quantidade="1">
+                        🛒 Adicionar ao carrinho
+                        </button>
+                    </div>
+                </div>
+
+                <!--maracuja-->
+                <div class="produto" onclick="abrirProduto(this)"
+                data-nome="Chá de Maracujá"
+                data-descricao="Possui efeito calmante natural. Excelente para relaxamento e noites tranquilas.">
+
+                    <img src="imagens/maracuja.jpeg">
+                    <p>Maracujá</p>
+                    <p>200g</p>
+                    <p>R$12,00</p>
+
+                    <div class="botao-container">
+                        <button class="botao"
+                        onclick="event.stopPropagation();
+                        adicionarAoCarrinho(this);
+                        window.location.href='carrinho.html';"
+                        data-nome="Maracujá"
+                        data-preco="12.00"
+                        data-quantidade="1">
+                        🛒 Adicionar ao carrinho
+                        </button>
+                    </div>
+                </div>
+
+                <!--hortela-->
+                <div class="produto" onclick="abrirProduto(this)"
+                data-nome="Chá de Hortelã"
+                data-descricao="Refrescante e digestivo. Ajuda no alívio de desconfortos estomacais.">
+
+                    <img src="imagens/hortela.jpeg">
+                    <p>Hortelã</p>
+                    <p>200g</p>
+                    <p>R$8,00</p>
+
+                    <div class="botao-container">
+                        <button class="botao"
+                        onclick="event.stopPropagation();
+                        adicionarAoCarrinho(this);
+                        window.location.href='carrinho.html';"
+                        data-nome="Hortelã"
+                        data-preco="8.00"
+                        data-quantidade="1">
+                        🛒 Adicionar ao carrinho
+                        </button>
+                    </div>
+                </div>
+
+                <!--funcho-->
+                <div class="produto" onclick="abrirProduto(this)"
+                data-nome="Chá de Funcho"
+                data-descricao="Conhecido por aliviar gases e melhorar a digestão. Muito utilizado após refeições.">
+
+                    <img src="imagens/funcho.jpeg">
+                    <p>Funcho</p>
+                    <p>200g</p>
+                    <p>R$12,00</p>
+
+                    <div class="botao-container">
+                        <button class="botao"
+                        onclick="event.stopPropagation();
+                        adicionarAoCarrinho(this);
+                        window.location.href='carrinho.html';"
+                        data-nome="Funcho"
+                        data-preco="12.00"
+                        data-quantidade="1">
+                        🛒 Adicionar ao carrinho
+                        </button>
+                    </div>
+                </div>
+
+                <!--gengibre-->
+                <div class="produto" onclick="abrirProduto(this)"
+                data-nome="Chá de Gengibre"
+                data-descricao="Possui propriedades anti-inflamatórias e termogênicas. Ajuda na imunidade e digestão.">
+
+                    <img src="imagens/gengibre.jpeg">
+                    <p>Gengibre</p>
+                    <p>200g</p>
+                    <p>R$10,00</p>
+
+                    <div class="botao-container">
+                        <button class="botao"
+                        onclick="event.stopPropagation();
+                        adicionarAoCarrinho(this);
+                        window.location.href='carrinho.html';"
+                        data-nome="Gengibre"
+                        data-preco="10.00"
+                        data-quantidade="1">
+                        🛒 Adicionar ao carrinho
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- MODAL DO PRODUTO -->
+
+            <div id="modalProduto" class="modal">
+                <div class="modal-conteudo">
+                    <span class="fechar" onclick="fecharProduto()">✖</span>
+                    <h3 id="modalTitulo"></h3>
+                    <p id="modalDescricao"></p>
+                </div>
+            </div>
+
+        </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

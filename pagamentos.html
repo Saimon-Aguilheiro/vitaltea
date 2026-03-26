@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagamento - VitalTea</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="imagens/icone.ico" type="img/png" size="18x18">
+</head>
+
+<body>
+<!--cabeçalho do site-->
+<header>
+    <div class="cabeçalho">
+        <img src="imagens/logo_vitaltea.png">
+        <h1>VitalTea</h1>
+    </div>
+    <!--area de navegacao entre as paginas-->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="produtos.html">Produtos</a></li>
+            <li><a href="carrinho.html">Carrinho</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <!-- FINALIZAR PAGAMENTO -->
+    <h2 class="titulo-principal">Finalizar Pagamento</h2>
+
+    <div class="checkout">
+
+    <!-- RESUMO -->
+        <div class="resumo">
+            <h3>Resumo do Pedido</h3>
+
+            <div id="resumoCarrinho"></div>
+
+            <p class="total">Total: R$ <span id="totalPagamento">0.00</span></p>
+        </div>
+
+        <!-- PAGAMENTO -->
+        <div class="pagamento">
+
+            <h3>Forma de Pagamento</h3>
+
+            <button onclick="selecionarPagamento('cartao')" class="botao">
+            💳 Cartão
+            </button>
+
+            <button onclick="selecionarPagamento('pix')" class="botao">
+            📱 Pix
+            </button>
+
+            <!-- CARTÃO -->
+            <div id="areaCartao" class="area-pagamento">
+
+                <input type="text" placeholder="Nome no cartão">
+                <input type="text" placeholder="Número do cartão">
+                <input type="text" placeholder="Validade (MM/AA)">
+                <input type="text" placeholder="CVV">
+
+                <select>
+                    <option>À vista</option>
+                    <option>2x sem juros</option>
+                    <option>3x sem juros</option>
+                    <option>4x sem juros</option>
+                </select>
+
+                <p>Bandeiras aceitas:</p>
+                <p>💳 Visa | MasterCard | Elo | American Express</p>
+
+            </div>
+
+            <!-- PIX -->
+                <div id="areaPix" class="area-pagamento">
+
+                    <p>Escaneie o QR Code para pagar:</p>
+
+                    <img id="qrcodePix" src="" alt="QR Code Pix">
+
+                    <p>Ou copie o código:</p>
+                    <input type="text" id="codigoPix" readonly>
+
+                </div>
+
+            <button onclick="pagar()" class="botao finalizar">
+            Pagar
+            </button>
+
+        </div>
+
+    </div>
+
+</main>
+
+<script src="script.js"></script>
+
+</body>
+</html>

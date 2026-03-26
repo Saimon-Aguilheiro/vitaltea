@@ -1,0 +1,312 @@
+/* RESET */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background:#F5E6C8;
+    color:#5A371A;
+    line-height:1.6;
+}
+
+/* HEADER */
+
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 10%;
+    background:#3F7F3A;
+    color:white;
+}
+
+.cabeçalho{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.cabeçalho img{
+    width:150px;
+}
+
+header h1{
+    font-size:40px;
+
+}
+
+/* MENU */
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:30px;
+}
+
+nav a{
+    text-decoration:none;
+    color:white;
+    font-weight:bold;
+    transition:0.3s;
+    font-size: large;
+}
+
+nav a:hover{
+    color:#E8D8B5;
+}
+
+/* CONTEÚDO PRINCIPAL */
+
+main{
+    padding:40px 10%;
+}
+
+.conteudo-principal{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.titulo-principal{
+    color:#3F7F3A;
+    margin-bottom:15px;
+    font-size:28px;
+}
+
+.texto-principal{
+    max-width:700px;
+    margin:auto;
+    font-size:18px;
+}
+
+/* CARROSSEL */
+
+.carolsel{
+    position:relative;
+    width:100%;
+    max-width:1100px;
+    margin:40px auto;
+    overflow:hidden;
+    border-radius:10px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.15);
+}
+
+.slides{
+    display:flex;
+    transition:transform 0.5s ease;
+}
+
+.slides img{
+    width:100%;
+    flex-shrink:0;
+}
+
+/* BOTÕES DO CARROSSEL */
+
+.prev,
+.next{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    background:rgba(0,0,0,0.4);
+    border:none;
+    color:white;
+    font-size:25px;
+    padding:10px 15px;
+    cursor:pointer;
+    border-radius:5px;
+}
+
+.prev{
+    left:10px;
+}
+
+.next{
+    right:10px;
+}
+
+.prev:hover,
+.next:hover{
+    background:#4CAF50;
+}
+
+/* PRODUTOS */
+
+.produtos{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+    margin-top:30px;
+}
+
+.produto{
+    background:#E8D8B5;
+    padding:20px;
+    border-radius:10px;
+    text-align:center;
+    width:220px;
+    transition:0.3s;
+}
+
+.produto img{
+    width:100%;
+    border-radius:8px;
+    margin-bottom:10px;
+}
+
+.produto p{
+    font-weight:bold;
+    font-size:18px;
+}
+
+.produto:hover{
+    transform:translateY(-5px);
+    box-shadow:0 8px 18px rgba(0,0,0,0.15);
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width:768px){
+
+    header{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    nav ul{
+        gap:15px;
+    }
+
+    /* 🔥 ALTERAÇÃO AQUI (somente isso mudou) */
+    .produtos{
+        display:grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap:15px;
+    }
+
+    .produto{
+        width:100%;
+    }
+
+}
+
+/* MODAL PRODUTO */
+
+.modal{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.6);
+justify-content:center;
+align-items:center;
+z-index:1000;
+}
+
+.modal-conteudo{
+background:#F5E6C8;
+padding:30px;
+border-radius:10px;
+max-width:400px;
+text-align:center;
+box-shadow:0 10px 20px rgba(0,0,0,0.3);
+}
+
+.modal-conteudo h3{
+color:#3F7F3A;
+margin-bottom:10px;
+}
+
+.fechar{
+cursor:pointer;
+float:right;
+font-size:20px;
+}
+
+.botao{
+
+display: inline-block;
+
+padding:14px 28px;
+margin-top:30px;
+
+background:#4CAF50;
+color:white;
+
+font-size:16px;
+font-weight:bold;
+
+text-decoration:none;
+border-radius:8px;
+
+transition:all 0.3s ease;
+
+box-shadow:0 4px 10px rgba(0,0,0,0.15);
+
+}
+
+/* efeito ao passar o mouse */
+
+.botao:hover{
+
+background:#3F7F3A;
+transform:translateY(-2px);
+box-shadow:0 6px 14px rgba(0,0,0,0.2);
+
+}
+
+/* efeito ao clicar */
+
+.botao:active{
+
+transform:scale(0.97);
+
+}
+
+.botao-container{
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+.checkout{
+display:flex;
+gap:40px;
+flex-wrap:wrap;
+margin-top:30px;
+}
+
+.resumo, .pagamento{
+background:#E8D8B5;
+padding:20px;
+border-radius:10px;
+flex:1;
+min-width:300px;
+}
+
+.area-pagamento{
+display:none;
+margin-top:20px;
+}
+
+.area-pagamento input,
+.area-pagamento select{
+display:block;
+width:100%;
+margin:10px 0;
+padding:10px;
+border-radius:6px;
+border:1px solid #ccc;
+}
+
+.finalizar{
+margin-top:20px;
+width:100%;
+background:#3F7F3A;
+}

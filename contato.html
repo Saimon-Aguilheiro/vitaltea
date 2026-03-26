@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vitaltea</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="imagens/icone.ico" type="img/png" size="18x18">
+    <link rel="alternate" href="produtos.html">
+    <link rel="alternate" href="index.html">
+    <script src="script.js"></script>
+</head>
+<body>
+    <!--cabeçalho do site-->
+    <header>
+        <div class="cabeçalho">
+            <img src="imagens/logo_vitaltea.png" alt="logo vitaltea">
+            <h1>VitalTea</h1>
+        </div>
+        <!--area de navegacao entre as paginas-->
+        <div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="produtos.html">Produtos</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!--contato-->
+        <div class="conteudo-principal">
+            <h2 class="titulo-principal">Contato</h2>
+            <p class="texto-principal">Para mais informações, entre em contato com a nossa equipe: (54) 99937-2244</p>
+        </div>
+        <!--botao de contato whatsapp-->
+        <div class="botao-container">
+        <a href="https://wa.me/54999372244" target="_blank" class="botao">Fale conosco pelo WhatsApp</a>
+        </div>
+        <!--formulario de contato email-->
+        <div class="conteudo-principal">
+            <label for="e-mail">Nos envie um e-mail:</label>
+            <input type="email" id="e-mail" name="e-mail" style="width: 300px; height: 40px;">
+            <button type="submit" class="botao">Enviar</button>
+        </div>
+        <!--endereço-->
+        <div class="conteudo-principal">
+            <h2 class="titulo-principal">Endereço</h2>
+            <p class="texto-principal">Avenida Paulista, 1000 - Bela Vista, São Paulo - SP</p>
+        </div>
+        <!--carrosel de imagens-->
+        <div class="carolsel">
+            <div class="slides">
+                <img src="imagens/baner1.jpeg" alt="imagem vitaltea">
+                <img src="imagens/baner2.jpeg" alt="imagem vitaltea">
+                <img src="imagens/baner3.jpeg" alt="imagem vitaltea">
+            </div>
+            <button class="prev"
+            onclick="mudarslide(-1)">❮</button>
+            <button class="next"
+            onclick="mudarslide(1)">❯</button>
+        </div>
+
+    </main>

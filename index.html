@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vitaltea</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="imagens/icone.ico" type="img/x-icon" size="18x18">
+</head>
+<body>
+
+    <!--cabeçalho do site-->
+    <header> 
+        <!-- area de logo e nome-->
+        <div class="cabeçalho">
+            <img src="imagens/logo_vitaltea.png" alt="logo vitaltea">
+            <h1>VitalTea</h1>
+        </div>
+        <!--area de navegacao entre as paginas-->
+        <div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="produtos.html">Produtos</a></li>
+                    <li><a href="contato.html">Contatos</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <main>
+        <!--introdução-->
+        <div class="conteudo-principal">
+            <h2 class="titulo-principal">Sobre a VitalTea</h2>
+            <p class="texto-principal">A VitalTea é uma empresa dedicada à produção de produtos naturais e orgânicos, 
+                com a missão de proporcionar momentos de relaxamento e bem-estar.</p>
+        </div>
+        <div id="listaUsuarios"></div>
+        <!--carrosel de imagens-->
+        <div class="carolsel">
+            <div class="slides">
+                <img src="imagens/baner1.jpeg" alt="imagem vitaltea">
+                <img src="imagens/baner2.jpeg" alt="imagem vitaltea">
+                <img src="imagens/baner3.jpeg" alt="imagem vitaltea">
+            </div>
+            <button class="prev"
+            onclick="mudarslide(-1)">❮</button>
+            <button class="next"
+            onclick="mudarslide(1)">❯</button>
+        </div>
+        <!--alguns produtos-->
+        <div class="produtos">
+            <!--cha de canela-->
+            <div class="produto" onclick="abrirProduto(this)"
+                data-nome="Chá de Canela"
+                data-descricao="Chá aromático com propriedades digestivas e termogênicas. Auxilia na digestão e traz sensação de conforto.">
+
+                <img src="imagens/canela.jpg">
+                <p>Canela</p>
+                <p>200g</p>
+                <p>R$7,00</p>
+
+                <div class="botao-container">
+                    <button class="botao" 
+                    onclick="event.stopPropagation();
+                    adicionarAoCarrinho(this);
+                    window.location.href='carrinho.html';"
+                    data-nome='Canela'
+                    data-preco='7.00'
+                    data-quantidade='1'>
+                    🛒 Adicionar ao carrinho
+                    </button>
+                </div>
+            </div>
+
+            <!--cha de marcela-->
+            <div class="produto" onclick="abrirProduto(this)"
+                data-nome="Chá de Marcela"
+                data-descricao="Muito utilizado para problemas digestivos. Possui efeito calmante e ajuda no bem-estar do estômago.">
+
+                <img src="imagens/marcela.jpeg">
+                <p>Marcela</p>
+                <p>200g</p>
+                <p>R$8,00</p>
+
+                <div class="botao-container">
+                    <button class="botao"
+                    onclick="event.stopPropagation();
+                    adicionarAoCarrinho(this);
+                    window.location.href='carrinho.html';"
+                    data-nome="Marcela"
+                    data-preco="8.00"
+                    data-quantidade="1">
+
+                    🛒 Adicionar ao carrinho
+                    </button>
+                </div>
+
+            </div>
+        
+        <!--cha de camomila-->
+            <div class="produto" onclick="abrirProduto(this)"
+                data-nome="Chá de Camomila"
+                data-descricao="Conhecido por seu efeito relaxante. Ideal para reduzir ansiedade e melhorar o sono.">
+
+                <img src="imagens/camomila_estacao_dos_graos.jpg">
+                <p>Camomila</p>
+                <p>200g</p>
+                <p>R$12,00</p>
+
+                <div class="botao-container">
+                    <button class="botao"
+                    onclick="event.stopPropagation();
+                    adicionarAoCarrinho(this);
+                    window.location.href='carrinho.html';"
+                    data-nome="Camomila"
+                    data-preco="12.00"
+                    data-quantidade="1">
+                    🛒 Adicionar ao carrinho
+                    </button>
+                </div>
+
+            </div>
+        </div>
+        <!--botão ver todos os produtos-->
+        <div class="botao-container">
+            <a href="produtos.html" class="botao">Ver todos os produtos</a>
+        </div>
+        <!--modal do produto-->
+        <div id="modalProduto" class="modal">
+
+            <div class="modal-conteudo">
+                <span class="fechar" onclick="fecharProduto()">×</span>
+                <h3 id="modalTitulo"></h3>
+                <p id="modalDescricao"></p>
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+    
+    
+
+</body>
+</html>

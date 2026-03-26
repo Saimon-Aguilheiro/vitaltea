@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carrinho - VitalTea</title>
+
+<link rel="icon" href="imagens/icone.ico" type="img/png" size="18x18">
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header>
+
+<div class="cabeçalho">
+<img src="imagens/logo_vitaltea.png">
+<h1>VitalTea</h1>
+</div>
+
+<nav>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="produtos.html">Produtos</a></li>
+<li><a href="contato.html">Contatos</a></li>
+</ul>
+</nav>
+
+</header>
+
+<main>
+
+<h2 class="titulo-principal">Seu Carrinho</h2>
+
+<div id="carrinhoVazio" class="carrinho-vazio">
+    Seu carrinho está vazio 🛒
+</div>
+
+<div id="listaCarrinho" class="lista-carrinho">
+    <!-- Produtos aparecem aqui -->
+</div>
+
+<div class="carrinho-resumo">
+
+    <h3>Total: R$ <span id="totalCarrinho">0.00</span></h3>
+
+    <button onclick="limparCarrinho()" class="botao">
+        Limpar Carrinho
+    </button>
+    <button onclick="window.location.href='produtos.html'" class="botao">
+        Continuar Comprando
+    </button>
+
+    <button onclick="window.location.href='pagamentos.html'" class="botao">
+        Finalizar Compra
+    </button>
+
+</div>
+
+</main>
+
+<script src="script.js"></script>
+
+</body>
+</html>
