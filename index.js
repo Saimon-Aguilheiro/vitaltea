@@ -8,15 +8,10 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// SERVIR FRONT-END
-app.use(express.static(path.join(__dirname, '../')));
+// 🔥 SERVIR FRONT-END (corrigido)
+app.use(express.static(path.join(__dirname)));
 
-// rota teste
-app.get('/', (req, res) => {
-  res.send('API funcionando 🚀');
-});
-
-// rota produtos (melhor que usuarios)
+// rota produtos
 app.get('/produtos', (req, res) => {
   db.query('SELECT * FROM produtos', (err, results) => {
     if (err) {
@@ -28,6 +23,14 @@ app.get('/produtos', (req, res) => {
   });
 });
 
-app.listen(3000, () => {
-  console.log('Servidor rodando em http://localhost:3000');
+// 🔥 ROTA PRINCIPAL MOSTRANDO O HTML
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'index.html'));
+});
+
+// 🔥 PORTA CORRETA PARA O RENDER
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+  console.log(`Servidor rodando na porta ${PORT}`);
 });
