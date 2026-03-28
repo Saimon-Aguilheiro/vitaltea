@@ -1,20 +1,14 @@
-const mysql = require('mysql2');
+const { Pool } = require('pg');
 
-// cria a conexão
-const connection = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: 'SaImOn.agu1lheiro', // coloca sua senha aqui
-  database: 'vitaltea'
-});
-
-// conecta ao banco
-connection.connect((err) => {
-  if (err) {
-    console.error('Erro ao conectar no MySQL:', err);
-    return;
+const pool = new Pool({
+  host: 'db.dcpazsnudcfmgkmsdqqv.supabase.co',
+  user: 'postgres',
+  password: 'SaImOn.agu1lheiro',
+  database: 'postgres',
+  port: 5432,
+  ssl: {
+    rejectUnauthorized: false
   }
-  console.log('Conectado ao MySQL 🚀');
 });
 
-module.exports = connection;
+module.exports = pool;
